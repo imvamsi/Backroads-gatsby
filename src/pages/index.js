@@ -1,14 +1,16 @@
 import React from "react"
 import { Link } from "gatsby"
 import Layout from "../components/Layout"
-import SimpleHero from "../components/SimpleHero"
 import Banner from "../components/Banner"
 import About from "../components/Home/About"
 import Service from "../components/Home/Services"
-
-export default () => (
+import StyledHero from "../components/StyledHero"
+import { graphql } from "gatsby"
+//console.log(props)
+//within the page queries we have access to the data
+export default ({ data }) => (
   <Layout>
-    <SimpleHero>
+    <StyledHero home="true" img={data.heroImg.childImageSharp.fluid}>
       <Banner
         title="Continue Exploring"
         info="lorem re obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical 
@@ -18,8 +20,20 @@ export default () => (
           Explore More
         </Link>
       </Banner>
-    </SimpleHero>
+    </StyledHero>
     <About />
     <Service />
   </Layout>
 )
+
+export const query = graphql`
+  query {
+    heroImg: file(relativePath: { eq: "defaultBcg.jpeg" }) {
+      childImageSharp {
+        fluid(quality: 90, maxWidth: 4500) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+  }
+`
