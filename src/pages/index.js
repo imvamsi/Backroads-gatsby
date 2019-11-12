@@ -6,6 +6,7 @@ import About from "../components/Home/About"
 import Service from "../components/Home/Services"
 import StyledHero from "../components/StyledHero"
 import { graphql } from "gatsby"
+import FeaturedTours from "../components/Home/FeaturedTours"
 //console.log(props)
 //within the page queries we have access to the data
 export default ({ data }) => (
@@ -23,6 +24,7 @@ export default ({ data }) => (
     </StyledHero>
     <About />
     <Service />
+    <FeaturedTours />
   </Layout>
 )
 
