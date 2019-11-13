@@ -11,6 +11,10 @@ module.exports = {
   siteMetadata: {
     title: "Backroads",
     description: "Explore awesome tours",
+    author: "@krrishvamsi7",
+    twitterUsername: "@krrishvamsi7",
+    image: "/defaultBcg.jpeg",
+    siteUrl: "https://focused-lovelace-d73a50.netlify.com",
   },
   plugins: [
     {
@@ -35,5 +39,6 @@ module.exports = {
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-transition-link`,
     `gatsby-plugin-playground`,
+    `gatsby-plugin-react-helmet`,
   ],
 }

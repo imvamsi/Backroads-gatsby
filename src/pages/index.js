@@ -7,10 +7,12 @@ import Service from "../components/Home/Services"
 import StyledHero from "../components/StyledHero"
 import { graphql } from "gatsby"
 import FeaturedTours from "../components/Home/FeaturedTours"
+import SEO from "../components/SEO"
 //console.log(props)
 //within the page queries we have access to the data
 export default ({ data }) => (
   <Layout>
+    <SEO title="Home" description="this is description" />
     <StyledHero home="true" img={data.heroImg.childImageSharp.fluid}>
       <Banner
         title="Continue Exploring"
